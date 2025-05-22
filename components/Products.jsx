@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from "react"
+import Link from "next/link";
 
 const Products = () => {
     const [products, setProducts] = useState([]);
@@ -29,7 +30,9 @@ const Products = () => {
                     {products.map(product => (
                         <div key={product.id} className="bg-white min-w-[100px] h-auto flex flex-col gap-3 p-4 rounded-lg shadow-md">
                             <img src={product.image} alt={product.title} className="h-50 mx-auto object-contain hover:scale-105 transition-all duration-300 cursor-pointer" />
-                            <h2 className="text-lg font-semibold">{product.title}</h2>
+                            <Link href={`/product/${product.id}`}>
+                                <h2 className="text-lg font-semibold mt-2 hover:underline">{product.title}</h2>
+                            </Link>
                             <p className="text-sm text-gray-600">{product.category}</p>
                             <p className="text-blue-600 font-bold my-2">${product.price}</p>
                             <button className="rounded-xl text-white bg-blue-900 px-4 py-2 cursor-pointer hover:bg-blue-950 transition-all duration-300">Add to Cart</button>
