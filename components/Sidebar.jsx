@@ -6,7 +6,7 @@ const Sidebar = () => {
     const [price, setPrice] = useState(0);
     return (
         <>
-            <div className="sidebar w-[20%] min-h-[50vh]">
+            <div className="sidebar max-md:hidden min-w-[20%] min-h-[50vh] sticky top-0">
                 <div className="filters px-5 py-5 flex flex-col bg-blue-800 rounded-lg text-white">
                     <h3 className="text-lg font-semibold">Filters</h3>
 
@@ -38,7 +38,7 @@ const Sidebar = () => {
                         <h3 className="py-2">Price</h3>
                         <input type="range" min="0" max="1000" value={price} onChange={(e) => setPrice(e.target.value)} className="w-full accent-white cursor-pointer" />
                         <div className="flex justify-between text-sm mt-1">
-                            <span>0</span>
+                            <span>$.{price}</span>
                             <span>$.1000</span>
                         </div>
                     </div>
