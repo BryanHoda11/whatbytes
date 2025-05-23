@@ -9,7 +9,7 @@ const Footer = () => {
     return (
         <>
             <footer className="w-full bg-blue-950 text-white">
-                <div className="flex flex-col md:flex-row max-md:gap-8 w-[85%] md:justify-between px-4 py-4 md:mx-auto">
+                <div className="flex flex-col md:flex-row max-md:gap-8 w-[75%] md:justify-between px-4 pt-7 md:mx-auto">
 
                     <div>
                         <h3 className='text-lg font-bold pb-2'>Filters</h3>

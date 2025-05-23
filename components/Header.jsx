@@ -1,16 +1,21 @@
 "use client"
+
 import { IoMdCart } from "react-icons/io";
 import { FaUser } from "react-icons/fa6";
+import Link from "next/link";
+import { useSearch } from "@/app/context/SearchContext";
 
 const Header = () => {
+    const { search, setSearch } = useSearch();
+
     return (
         <>
             <div className="flex items-center w-full z-20 sticky top-0">
                 <nav className="flex w-full items-center justify-between p-4 bg-blue-700 text-white">
-                    <div className="logo font-bold text-lg">LOGO</div>
+                    <div className="logo font-bold text-lg cursor-pointer"><Link href='/'>LOGO</Link></div>
 
                     <div className="search hidden lg:block">
-                        <input className="w-[500px] px-4 py-2 border rounded-xl" type="text" name="search" placeholder="Search for products..." />
+                        <input value={search} onChange={(e) => setSearch(e.target.value)} className="w-[500px] px-4 py-2 border rounded-xl" type="text" name="search" placeholder="Search for products..." />
                     </div>
 
                     <div className="buttons flex items-center gap-3">
